@@ -1,1 +1,1 @@
-<h2>k-th-symbol-in-grammar Notes</h2><hr>[ Time taken: 6hrs 57m 49s ]
+<h2>k-th-symbol-in-grammar Notes</h2><hr>[ Time taken: 7hrs 50m 24s ]
