@@ -13,11 +13,10 @@ class Solution:
 
             if not node:
                 return 0
-
-            l=max(0, dfs(node.left))
-            r=max(0, dfs(node.right))
-
-            max_sum = max(max_sum, l + r + node.val)
+            
+            l = max(0, dfs(node.left))
+            r = max(0, dfs(node.right))
+            max_sum=max(max_sum, l+r+node.val)
 
             return node.val + max(l, r)
         
