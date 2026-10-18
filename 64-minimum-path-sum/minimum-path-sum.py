@@ -1,9 +1,9 @@
-from functools import cache
+from functools import lru_cache
 class Solution:
     def minPathSum(self, grid: list[list[int]]) -> int:
         m=len(grid)
         n=len(grid[0])
-        @cache
+        @lru_cache
         def dp(i,j):
             if i==m-1 and j==n-1:
                 return grid[i][j]
