@@ -2,10 +2,12 @@ class Solution:
     def removeOuterParentheses(self, s: str) -> str:
         count=0
         res=""
+        back=0
         for i in s:
-            if i == "(":
+            
+            if i =="(":
                 count+=1
-                if count > 1:
+                if count>1:
                     res+=i
             else:
                 count-=1
