@@ -2,7 +2,7 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         
         res=[]
-        path=[]
+        
         def dfs(i,path):
             if i==len(nums):
                 res.append(path.copy())
