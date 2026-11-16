@@ -1,15 +1,23 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        
-        max_prod=max(nums)
-        cur_max=cur_min=1
+        n=len(nums)
+        max_prod=nums[0]
+        min_prod=nums[0]
+        res=nums[0]
+        def dp(i):
+            nonlocal max_prod, min_prod, res
+            if i>=n:
+                return res
+            
+            #take
+            new_max=max(nums[i], max_prod*nums[i], min_prod*nums[i])
+            new_min=min(nums[i], min_prod*nums[i], max_prod*nums[i])
+            max_prod=new_max
+            min_prod=new_min
+            res=max(res, new_max, new_min)
+            dp(i+1)
 
-        for i in nums:
-            if i==0:
-                cur_max=cur_min=1
-                continue
-            temp=cur_max*i
-            cur_max=max(cur_max*i,cur_min*i,i)
-            cur_min=min(temp,cur_min*i,i)
-            max_prod=max(max_prod,cur_max)
-        return max_prod
+         
+
+        dp(1)
+        return res
