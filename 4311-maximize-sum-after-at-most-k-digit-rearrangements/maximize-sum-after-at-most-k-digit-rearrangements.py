@@ -3,12 +3,13 @@ class Solution:
         
         def rev(x):
             y=str(x)
-            return int(''.join(sorted(y, reverse=True)))
-        
-        gain=[]
+            z=int("".join(sorted(y, reverse=True)))
+            return z
+
+        res=[]
         for i in nums:
-            res=rev(i)-i
-            gain.append(res)
-            
-        gain.sort(reverse=True)
-        return sum(nums) + sum(gain[:k])
+            z=abs(i-rev(i))
+            res.append(z)
+        
+        res.sort(reverse=True)
+        return sum(nums) + sum(res[:k])
