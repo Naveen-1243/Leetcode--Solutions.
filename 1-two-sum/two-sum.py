@@ -1,12 +1,14 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         
-        d={}
-        for i, val in enumerate(nums):
-            diff = target-val
+        #two loops
+        #sort two pointers 
+        #dictionary
+        N=len(nums)
+        for i in range(N):
+            for j in range(i+1, N):
+                total = nums[i] + nums[j]
 
-            if diff in d:
-                return [d[diff], i]
-            else:
-                d[val]=i
+                if total == target:
+                    return [i,j]
         
