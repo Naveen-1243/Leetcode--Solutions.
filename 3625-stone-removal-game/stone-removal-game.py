@@ -1,16 +1,17 @@
 class Solution:
     def canAliceWin(self, n: int) -> bool:
-        
+    
+        x=10
         if n<10:
             return False
         
-        x=10
         change=0
         while n:
-            if n-x<0:
+            if n<x:
                 break
             n=n-x
-            change+=1
             x-=1
+            change += 1
 
-        return False if change%2==0 else True
+        return True if change%2!=0 else False
+
